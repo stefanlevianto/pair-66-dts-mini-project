@@ -16,20 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        {/* Kita akan gunakan di sini dan nge-slot App */}
-        <Route
-          path="home"
-          element={
-            <ProtectedComponent>
-              <App />
-            </ProtectedComponent>
-          }
-        />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="/" element={<ProfilePage />} />
-      </Routes>
+      <App></App>
     </BrowserRouter>
   </React.StrictMode>
 );

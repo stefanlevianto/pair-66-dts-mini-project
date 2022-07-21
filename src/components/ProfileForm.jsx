@@ -1,7 +1,7 @@
 import React from "react";
 import { CardMedia, Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import AdbIcon from "@mui/icons-material/Adb";
 const ProfilePage = () => {
   const navigate = useNavigate();
   const navToHome = () => {
@@ -16,9 +16,39 @@ const ProfilePage = () => {
 
   return (
     <Box sx={{ bgcolor: "ivory", height: "100vh" }}>
-      <Typography variant="h1" sx={{ pt: 2, pl: 2 }} onClick={navToHome}>
-        NETFLUX
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+        onClick={navToHome}
+      >
+        <AdbIcon
+          sx={{
+            width: 50,
+            height: 70,
+            display: { xs: "none", md: "flex" },
+            mr: 1,
+          }}
+        />
+        <Typography
+          variant="h2"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          NETFLUX
+        </Typography>
+      </Box>
       <Box
         sx={{
           display: "flex",
@@ -26,7 +56,7 @@ const ProfilePage = () => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h3" sx={{ pt: 2, pl: 2 }}>
+        <Typography variant="h2" sx={{ pt: 2, pl: 2 }}>
           WHO IS WATCHING?
         </Typography>
       </Box>

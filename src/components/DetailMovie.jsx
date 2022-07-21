@@ -1,21 +1,11 @@
 import React from "react";
 import { Box, Card, CardMedia, CardContent, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
-const CardMovie = (props) => {
+const DetailMovie = (props) => {
   const baseUrlForMovie = "https://image.tmdb.org/t/p/w200";
-  const navigate = useNavigate();
-  const NavToMovieDetail = (id) => {
-    navigate("/moviedetail/", id);
-  };
 
   return (
-    <Card
-      sx={{ bgcolor: "ivory" }}
-      onClick={() => {
-        NavToMovieDetail(props.movie.id);
-      }}
-    >
+    <Card sx={{ bgcolor: "ivory" }}>
       <Box
         className="boxy"
         sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
@@ -43,4 +33,4 @@ const CardMovie = (props) => {
   );
 };
 
-export default CardMovie;
+export default DetailMovie;

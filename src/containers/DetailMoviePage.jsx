@@ -1,19 +1,20 @@
 import React from "react";
-import ListMoviesPopular from "../components/ListMoviesPopular";
+
+/* import { Box, Typography } from "@mui/material"; */
 import { Box } from "@mui/system";
 import ResponsiveAppBar from "../components/Navbar";
 import Footer from "../components/Footer";
-
-const HomePage = () => {
+import DetailMovie from "../components/DetailMovie";
+const DetailMoviePage = () => {
   return (
     <>
       <ResponsiveAppBar />
       <Box sx={{ bgcolor: "ivory" }}>
-        <ListMoviesPopular></ListMoviesPopular>
+        <DetailMovie></DetailMovie>
       </Box>
       <Footer />
     </>
   );
 };
 
-export default HomePage;
+export default DetailMoviePage;
