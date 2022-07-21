@@ -3,11 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import LoginPage from "./containers/LoginPage";
-import RegisterPage from "./containers/RegisterPage";
-import ProfilePage from "./components/ProfileForm";
+import { BrowserRouter } from "react-router-dom";
 
 // Kita akan import ProtectedComponent untuk digunakan di sini
 import ProtectedComponent from "./components/ProtectedComponent";
