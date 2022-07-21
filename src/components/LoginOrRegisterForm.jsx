@@ -75,16 +75,17 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "center",
           width: 1 / 2,
           length: 1 / 2,
         }}
       >
-        <Typography variant="body1">
+        <Typography variant="h5">
           {loginOrRegister === "login" ? "Login Page" : "Register Page"}
         </Typography>
 
         <TextField
-          sx={{ width: 2.5 / 3, length: 2.5 / 3 }}
+          sx={{ width: 2.5 / 3 }}
           label="EMAIL"
           type="email"
           variant="outlined"
@@ -95,7 +96,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
         />
 
         <TextField
-          sx={{ width: 2.5 / 3, length: 2.5 / 3 }}
+          sx={{ width: 2.5 / 3 }}
           label="PASSWORD"
           type="Password"
           variant="outlined"
@@ -106,7 +107,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
         />
 
         <Button
-          sx={{ width: 2.5 / 3, length: 2.5 / 3, m: 1 }}
+          sx={{ width: 2.5 / 3, height: 1 / 15, m: 1, fontSize: 20 }}
           variant="contained"
           size="big"
           onClick={buttonLoginOrRegisterOnClickHandler}

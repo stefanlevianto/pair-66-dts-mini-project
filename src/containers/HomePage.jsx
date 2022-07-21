@@ -4,26 +4,33 @@
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../authentication/firebase";
-
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
+import { keluarAplikasi } from "../authentication/firebase";
+import ListMoviesPopular from "../components/ListMoviesPopular";
+import { Box } from "@mui/system";
 const HomePage = () => {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  // Fungsi ini akan menjadi async await
+  // Karena keluarDariApps bersifat async, dan kita harus menunggu
+  // keluarDariAppsSelesai, baru boleh navigate
+  const buttonLogoutOnClickHandler = async () => {
+    // Kita akan memanggil fungsi keluarDariApps di sini
+    await keluarAplikasi();
+    navigate("/");
+  };
 
   return (
     <>
-      <console className="log">ini halaman home</console>
-      {/*       <Box className={styles.container}>
-        <Typography variant="body1">Halo, ini adalah halaman utama</Typography>
-
-        
-        {user ? (
-          <Typography variant="body1">
-            Email - <strong>{user.email}</strong>, uid -{" "}
-            <strong>{user.uid}</strong>
-          </Typography>
-        ) : (
-          ""
-        )}
-      </Box> */}
+      <Box sx={{ bgcolor: "ivory" }}>
+        <console className="log">ini halaman home</console>
+        <Button color="inherit" onClick={buttonLogoutOnClickHandler}>
+          Logout
+        </Button>
+        <ListMoviesPopular></ListMoviesPopular>
+      </Box>
     </>
   );
 };
