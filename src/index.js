@@ -5,9 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
 
-// Kita akan import ProtectedComponent untuk digunakan di sini
-import ProtectedComponent from "./components/ProtectedComponent";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
